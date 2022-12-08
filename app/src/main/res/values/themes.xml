@@ -1,0 +1,76 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.AlienRPG" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/seegson_green</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/hypersleep_white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/seegson_green</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/seegson_green</item>
+        <!-- Customize your theme here. -->
+
+        <!-- For the resting Spinner style -->
+        <item name="android:spinnerItemStyle">
+            @style/spinnerItemStyle
+        </item>
+
+        <!-- For each individual Spinner list item once clicked on -->
+        <item name="android:spinnerDropDownItemStyle">
+            @style/spinnerDropDownItemStyle
+        </item>
+
+        <item name="android:textViewStyle">
+            @style/textViewStyle
+        </item>
+
+        <item name="android:buttonStyle">
+            @style/buttonStyle
+        </item>
+
+        <item name="editTextStyle">
+            @style/editTextStyle
+        </item>
+    </style>
+
+    <style name="editTextStyle">
+        <item name="android:textSize">32sp</item>
+        <item name="android:textColor">@color/hypersleep_white</item>
+        <item name="android:fontFamily">@font/sevastopol_interface</item>
+        <item name="textAllCaps">true</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="buttonStyle">
+        <item name="cornerRadius">0dp</item>
+        <item name="android:textSize">32sp</item>
+        <item name="android:textColor">@color/hypersleep_white</item>
+        <item name="android:fontFamily">@font/sevastopol_interface</item>
+        <item name="textAllCaps">true</item>
+        <item name="background">@color/seegson_green</item>
+    </style>
+
+    <style name="textViewStyle">
+        <item name="android:textSize">32sp</item>
+        <item name="android:textColor">@color/hypersleep_white</item>
+        <item name="android:fontFamily">@font/sevastopol_interface</item>
+        <item name="textAllCaps">true</item>
+    </style>
+
+    <style name="spinnerItemStyle">
+        <item name="android:textSize">32sp</item>
+        <item name="android:textColor">@color/seegson_green</item>
+        <item name="android:fontFamily">@font/sevastopol_interface</item>
+        <item name="textAllCaps">true</item>
+    </style>
+
+    <style name="spinnerDropDownItemStyle">
+        <item name="android:textSize">26sp</item>
+        <item name="android:textColor">@color/seegson_green</item>
+        <item name="android:fontFamily">@font/sevastopol_interface</item>
+        <item name="textAllCaps">true</item>
+    </style>
+</resources>

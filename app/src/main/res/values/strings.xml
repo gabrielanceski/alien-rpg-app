@@ -1,0 +1,59 @@
+<resources>
+    <string name="app_name">Alien RPG</string>
+    <string name="btn_characters">Personagens</string>
+    <string name="btn_new_character">Criar personagem</string>
+
+    <string name="create_character_title">Novo personagem</string>
+    <string name="character_name">Nome:</string>
+    <string name="character_name_hint">Ex: Ellen Ripley</string>
+    <string name="character_android">Android:</string>
+    <string name="character_career">Carreira:</string>
+
+    <string name="character_attr_strength_desc">Força bruta muscular e vigor.</string>
+    <string name="character_attr_agility_desc">Controle corporal, velocidade e habilidades motoras.</string>
+    <string name="character_attr_wits_desc">Percepção sensorial, inteligência e sanidade.</string>
+    <string name="character_attr_empathy_desc">Carisma pessoal, empatia e capacidade de manipular os outros.</string>
+
+    <!-- ATRIBUTOS -->
+    <string name="attributes_default_value">2</string>
+    <string name="attributes_strength">Força</string>
+    <string name="attributes_wits">Perspicácia</string>
+    <string name="attributes_empathy">Empatia</string>
+    <string name="attributes_agility">Agilidade</string>
+
+    <!-- HABILIDADES -->
+    <string name="abilities_default_value">0</string>
+    <string name="abilities_str_heavy_machinery">Maquinário pesado</string>
+    <string name="abilities_str_close_combat">Combate corpo a corpo</string>
+    <string name="abilities_str_stamina">Resistência</string>
+    <string name="abilities_wit_observation">Observação</string>
+    <string name="abilities_wit_survival">Sobrevivência</string>
+    <string name="abilities_wit_comtech">Tecnologia</string>
+    <string name="abilities_emp_medical_aid">Ajuda médica</string>
+    <string name="abilities_emp_manipulation">Manipulação</string>
+    <string name="abilities_emp_command">Comando</string>
+    <string name="abilities_agi_piloting">Pilotagem</string>
+    <string name="abilities_agi_mobility">Mobilidade</string>
+    <string name="abilities_agi_ranged_combat">Combate à distância</string>
+
+    <string-array name="careers_array">
+        <item>Fuzileiro Colonial</item>
+        <item>Xerife Colonial</item>
+        <item>Agente da Companhia</item>
+        <item>Criança</item>
+        <item>Médico</item>
+        <item>Oficial</item>
+        <item>Piloto</item>
+        <item>Operário</item>
+        <item>Cientista</item>
+    </string-array>
+
+    <string name="general_next">Próximo</string>
+    <string name="general_button_add">+</string>
+    <string name="general_button_subtract">-</string>
+    <string name="general_available_points">Pontos disponíveis: </string>
+    <string name="general_abilities">Habilidades</string>
+    <string name="general_attributes">Atributos</string>
+    <string name="general_characters">Personagens</string>
+
+</resources>

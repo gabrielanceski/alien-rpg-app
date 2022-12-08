@@ -1,0 +1,741 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/terminal_green"
+    tools:context=".CreateCharacterActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/top_guide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="8dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/right_guide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="8dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bottom_guide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="8dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/left_guide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="8dp" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_guide"
+        app:layout_constraintEnd_toEndOf="@id/right_guide"
+        app:layout_constraintStart_toStartOf="@+id/left_guide"
+        app:layout_constraintTop_toBottomOf="@id/top_guide">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/general_abilities"
+                android:textAlignment="center" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/general_available_points"/>
+
+                <TextView
+                    android:id="@+id/abilities_point_pool"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="@string/attributes_default_value"
+                    android:textColor="@color/acid_blood"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/strength_abilities"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:background="@drawable/border"
+                android:layout_marginBottom="15dp">
+
+                <TextView
+                    android:id="@+id/strength_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/attributes_strength"
+                    android:textAlignment="center"
+                    app:layout_constraintBottom_toTopOf="@+id/top_guide"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <LinearLayout
+                    android:id="@+id/abilities_heavy_machinery"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toStartOf="@id/right_guide"
+                    app:layout_constraintStart_toStartOf="@id/left_guide"
+                    app:layout_constraintTop_toBottomOf="@id/attributes_guide">
+
+                    <TextView
+                        android:id="@+id/abilities_heavy_machinery_display"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sevastopol_interface"
+                        android:text="@string/abilities_str_heavy_machinery" />
+
+                    <TextView
+                        android:id="@+id/abilities_heavy_machinery_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginEnd="30dp"
+                        android:text="@string/abilities_default_value"
+                        android:textAlignment="center"
+                        android:textColor="@color/seegson_green" />
+
+                    <Button
+                        android:id="@+id/abilities_heavy_machinery_subtract"
+                        style="@style/buttonStyle"
+                        android:layout_width="48dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:text="@string/general_button_subtract"
+                        android:theme="@style/Theme.AlienRPG"
+                        tools:ignore="DuplicateSpeakableTextCheck" />
+
+                    <Button
+                        android:id="@+id/abilities_heavy_machinery_add"
+                        style="@style/buttonStyle"
+                        android:layout_width="48dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="@string/general_button_add"
+                        tools:ignore="DuplicateSpeakableTextCheck" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/abilities_close_combat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toStartOf="@id/right_guide"
+                    app:layout_constraintStart_toStartOf="@id/left_guide"
+                    app:layout_constraintTop_toBottomOf="@id/attributes_guide">
+
+                    <TextView
+                        android:id="@+id/abilities_close_combat_display"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sevastopol_interface"
+                        android:text="@string/abilities_str_close_combat" />
+
+                    <TextView
+                        android:id="@+id/abilities_close_combat_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginEnd="30dp"
+                        android:text="@string/abilities_default_value"
+                        android:textAlignment="center"
+                        android:textColor="@color/seegson_green" />
+
+                    <Button
+                        android:id="@+id/abilities_close_combat_subtract"
+                        style="@style/buttonStyle"
+                        android:layout_width="48dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:text="@string/general_button_subtract"
+                        android:theme="@style/Theme.AlienRPG"
+                        tools:ignore="DuplicateSpeakableTextCheck" />
+
+                    <Button
+                        android:id="@+id/abilities_close_combat_add"
+                        style="@style/buttonStyle"
+                        android:layout_width="48dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="@string/general_button_add"
+                        tools:ignore="DuplicateSpeakableTextCheck" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/abilities_stamina"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toStartOf="@id/right_guide"
+                    app:layout_constraintStart_toStartOf="@id/left_guide"
+                    app:layout_constraintTop_toBottomOf="@id/attributes_guide">
+
+                    <TextView
+                        android:id="@+id/abilities_stamina_display"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sevastopol_interface"
+                        android:text="@string/abilities_str_stamina" />
+
+                    <TextView
+                        android:id="@+id/abilities_stamina_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginEnd="30dp"
+                        android:text="@string/abilities_default_value"
+                        android:textAlignment="center"
+                        android:textColor="@color/seegson_green" />
+
+                    <Button
+                        android:id="@+id/abilities_stamina_subtract"
+                        style="@style/buttonStyle"
+                        android:layout_width="48dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:text="@string/general_button_subtract"
+                        android:theme="@style/Theme.AlienRPG"
+                        tools:ignore="DuplicateSpeakableTextCheck" />
+
+                    <Button
+                        android:id="@+id/abilities_stamina_add"
+                        style="@style/buttonStyle"
+                        android:layout_width="48dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="@string/general_button_add"
+                        tools:ignore="DuplicateSpeakableTextCheck" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/wits_abilities"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:background="@drawable/border"
+                android:layout_marginBottom="15dp">
+
+                <TextView
+                    android:id="@+id/wits_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/attributes_wits"
+                    android:textAlignment="center"
+                    app:layout_constraintBottom_toTopOf="@+id/top_guide"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <LinearLayout
+                    android:id="@+id/abilities_observation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toStartOf="@id/right_guide"
+                    app:layout_constraintStart_toStartOf="@id/left_guide"
+                    app:layout_constraintTop_toBottomOf="@id/attributes_guide">
+
+                    <TextView
+                        android:id="@+id/abilities_observation_display"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sevastopol_interface"
+                        android:text="@string/abilities_wit_observation" />
+
+                    <TextView
+                        android:id="@+id/abilities_observation_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginEnd="30dp"
+                        android:text="@string/abilities_default_value"
+                        android:textAlignment="center"
+                        android:textColor="@color/seegson_green" />
+
+                    <Button
+                        android:id="@+id/abilities_observation_subtract"
+                        style="@style/buttonStyle"
+                        android:layout_width="48dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:text="@string/general_button_subtract"
+                        android:theme="@style/Theme.AlienRPG"
+                        tools:ignore="DuplicateSpeakableTextCheck" />
+
+                    <Button
+                        android:id="@+id/abilities_observation_add"
+                        style="@style/buttonStyle"
+                        android:layout_width="48dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="@string/general_button_add"
+                        tools:ignore="DuplicateSpeakableTextCheck" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/abilities_survival"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toStartOf="@id/right_guide"
+                    app:layout_constraintStart_toStartOf="@id/left_guide"
+                    app:layout_constraintTop_toBottomOf="@id/attributes_guide">
+
+                    <TextView
+                        android:id="@+id/abilities_survival_display"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sevastopol_interface"
+                        android:text="@string/abilities_wit_survival" />
+
+                    <TextView
+                        android:id="@+id/abilities_survival_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginEnd="30dp"
+                        android:text="@string/abilities_default_value"
+                        android:textAlignment="center"
+                        android:textColor="@color/seegson_green" />
+
+                    <Button
+                        android:id="@+id/abilities_survival_subtract"
+                        style="@style/buttonStyle"
+                        android:layout_width="48dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:text="@string/general_button_subtract"
+                        android:theme="@style/Theme.AlienRPG"
+                        tools:ignore="DuplicateSpeakableTextCheck" />
+
+                    <Button
+                        android:id="@+id/abilities_survival_add"
+                        style="@style/buttonStyle"
+                        android:layout_width="48dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="@string/general_button_add"
+                        tools:ignore="DuplicateSpeakableTextCheck" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/abilities_comtech"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toStartOf="@id/right_guide"
+                    app:layout_constraintStart_toStartOf="@id/left_guide"
+                    app:layout_constraintTop_toBottomOf="@id/attributes_guide">
+
+                    <TextView
+                        android:id="@+id/abilities_comtech_display"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sevastopol_interface"
+                        android:text="@string/abilities_wit_comtech" />
+
+                    <TextView
+                        android:id="@+id/abilities_comtech_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginEnd="30dp"
+                        android:text="@string/abilities_default_value"
+                        android:textAlignment="center"
+                        android:textColor="@color/seegson_green" />
+
+                    <Button
+                        android:id="@+id/abilities_comtech_subtract"
+                        style="@style/buttonStyle"
+                        android:layout_width="48dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:text="@string/general_button_subtract"
+                        android:theme="@style/Theme.AlienRPG"
+                        tools:ignore="DuplicateSpeakableTextCheck" />
+
+                    <Button
+                        android:id="@+id/abilities_comtech_add"
+                        style="@style/buttonStyle"
+                        android:layout_width="48dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="@string/general_button_add"
+                        tools:ignore="DuplicateSpeakableTextCheck" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/empathy_abilities"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:background="@drawable/border"
+                android:layout_marginBottom="15dp">
+
+                <TextView
+                    android:id="@+id/empathy_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/attributes_empathy"
+                    android:textAlignment="center"
+                    app:layout_constraintBottom_toTopOf="@+id/top_guide"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <LinearLayout
+                    android:id="@+id/abilities_command"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toStartOf="@id/right_guide"
+                    app:layout_constraintStart_toStartOf="@id/left_guide"
+                    app:layout_constraintTop_toBottomOf="@id/attributes_guide">
+
+                    <TextView
+                        android:id="@+id/abilities_command_display"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sevastopol_interface"
+                        android:text="@string/abilities_emp_command" />
+
+                    <TextView
+                        android:id="@+id/abilities_command_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginEnd="30dp"
+                        android:text="@string/abilities_default_value"
+                        android:textAlignment="center"
+                        android:textColor="@color/seegson_green" />
+
+                    <Button
+                        android:id="@+id/abilities_command_subtract"
+                        style="@style/buttonStyle"
+                        android:layout_width="48dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:text="@string/general_button_subtract"
+                        android:theme="@style/Theme.AlienRPG"
+                        tools:ignore="DuplicateSpeakableTextCheck" />
+
+                    <Button
+                        android:id="@+id/abilities_command_add"
+                        style="@style/buttonStyle"
+                        android:layout_width="48dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="@string/general_button_add"
+                        tools:ignore="DuplicateSpeakableTextCheck" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/abilities_manipulation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toStartOf="@id/right_guide"
+                    app:layout_constraintStart_toStartOf="@id/left_guide"
+                    app:layout_constraintTop_toBottomOf="@id/attributes_guide">
+
+                    <TextView
+                        android:id="@+id/abilities_manipulation_display"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sevastopol_interface"
+                        android:text="@string/abilities_emp_manipulation" />
+
+                    <TextView
+                        android:id="@+id/abilities_manipulation_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginEnd="30dp"
+                        android:text="@string/abilities_default_value"
+                        android:textAlignment="center"
+                        android:textColor="@color/seegson_green" />
+
+                    <Button
+                        android:id="@+id/abilities_manipulation_subtract"
+                        style="@style/buttonStyle"
+                        android:layout_width="48dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:text="@string/general_button_subtract"
+                        android:theme="@style/Theme.AlienRPG"
+                        tools:ignore="DuplicateSpeakableTextCheck" />
+
+                    <Button
+                        android:id="@+id/abilities_manipulation_add"
+                        style="@style/buttonStyle"
+                        android:layout_width="48dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="@string/general_button_add"
+                        tools:ignore="DuplicateSpeakableTextCheck" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/abilities_medical_aid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toStartOf="@id/right_guide"
+                    app:layout_constraintStart_toStartOf="@id/left_guide"
+                    app:layout_constraintTop_toBottomOf="@id/attributes_guide">
+
+                    <TextView
+                        android:id="@+id/abilities_medical_aid_display"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sevastopol_interface"
+                        android:text="@string/abilities_emp_medical_aid" />
+
+                    <TextView
+                        android:id="@+id/abilities_medical_aid_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginEnd="30dp"
+                        android:text="@string/abilities_default_value"
+                        android:textAlignment="center"
+                        android:textColor="@color/seegson_green" />
+
+                    <Button
+                        android:id="@+id/abilities_medical_aid_subtract"
+                        style="@style/buttonStyle"
+                        android:layout_width="48dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:text="@string/general_button_subtract"
+                        android:theme="@style/Theme.AlienRPG"
+                        tools:ignore="DuplicateSpeakableTextCheck" />
+
+                    <Button
+                        android:id="@+id/abilities_medical_aid_add"
+                        style="@style/buttonStyle"
+                        android:layout_width="48dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="@string/general_button_add"
+                        tools:ignore="DuplicateSpeakableTextCheck" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/agility_abilities"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:background="@drawable/border"
+                android:layout_marginBottom="15dp">
+
+                <TextView
+                    android:id="@+id/agility_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/attributes_agility"
+                    android:textAlignment="center"
+                    app:layout_constraintBottom_toTopOf="@+id/top_guide"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <LinearLayout
+                    android:id="@+id/abilities_piloting"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toStartOf="@id/right_guide"
+                    app:layout_constraintStart_toStartOf="@id/left_guide"
+                    app:layout_constraintTop_toBottomOf="@id/attributes_guide">
+
+                    <TextView
+                        android:id="@+id/abilities_piloting_display"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sevastopol_interface"
+                        android:text="@string/abilities_agi_piloting" />
+
+                    <TextView
+                        android:id="@+id/abilities_piloting_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginEnd="30dp"
+                        android:text="@string/abilities_default_value"
+                        android:textAlignment="center"
+                        android:textColor="@color/seegson_green" />
+
+                    <Button
+                        android:id="@+id/abilities_piloting_subtract"
+                        style="@style/buttonStyle"
+                        android:layout_width="48dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:text="@string/general_button_subtract"
+                        android:theme="@style/Theme.AlienRPG"
+                        tools:ignore="DuplicateSpeakableTextCheck" />
+
+                    <Button
+                        android:id="@+id/abilities_piloting_add"
+                        style="@style/buttonStyle"
+                        android:layout_width="48dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="@string/general_button_add"
+                        tools:ignore="DuplicateSpeakableTextCheck" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/abilities_mobility"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toStartOf="@id/right_guide"
+                    app:layout_constraintStart_toStartOf="@id/left_guide"
+                    app:layout_constraintTop_toBottomOf="@id/attributes_guide">
+
+                    <TextView
+                        android:id="@+id/abilities_mobility_display"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sevastopol_interface"
+                        android:text="@string/abilities_agi_mobility" />
+
+                    <TextView
+                        android:id="@+id/abilities_mobility_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginEnd="30dp"
+                        android:text="@string/abilities_default_value"
+                        android:textAlignment="center"
+                        android:textColor="@color/seegson_green" />
+
+                    <Button
+                        android:id="@+id/abilities_mobility_subtract"
+                        style="@style/buttonStyle"
+                        android:layout_width="48dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:text="@string/general_button_subtract"
+                        android:theme="@style/Theme.AlienRPG"
+                        tools:ignore="DuplicateSpeakableTextCheck" />
+
+                    <Button
+                        android:id="@+id/abilities_mobility_add"
+                        style="@style/buttonStyle"
+                        android:layout_width="48dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="@string/general_button_add"
+                        tools:ignore="DuplicateSpeakableTextCheck" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/abilities_ranged_combat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toStartOf="@id/right_guide"
+                    app:layout_constraintStart_toStartOf="@id/left_guide"
+                    app:layout_constraintTop_toBottomOf="@id/attributes_guide">
+
+                    <TextView
+                        android:id="@+id/abilities_ranged_combat_display"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sevastopol_interface"
+                        android:text="@string/abilities_agi_ranged_combat" />
+
+                    <TextView
+                        android:id="@+id/abilities_ranged_combat_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginEnd="30dp"
+                        android:text="@string/abilities_default_value"
+                        android:textAlignment="center"
+                        android:textColor="@color/seegson_green" />
+
+                    <Button
+                        android:id="@+id/abilities_ranged_combat_subtract"
+                        style="@style/buttonStyle"
+                        android:layout_width="48dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:text="@string/general_button_subtract"
+                        android:theme="@style/Theme.AlienRPG"
+                        tools:ignore="DuplicateSpeakableTextCheck,TextContrastCheck" />
+
+                    <Button
+                        android:id="@+id/abilities_ranged_combat_add"
+                        style="@style/buttonStyle"
+                        android:layout_width="48dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="@string/general_button_add"
+                        tools:ignore="DuplicateSpeakableTextCheck,TextContrastCheck" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
